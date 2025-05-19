@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <h2>Medicak Insurance Cost Prediction</h2> 
+  <form action="/predict" method="POST">
+Age:<input type="number" name="age" required><br><br>
+sex:
+  <select name="sex" required>
+      <option value="male">male</option>
+      <option value="female">female</option>
+  </select><br><br>
+  BMI:<input type="number" name="bmi" required><br><br>
+  Chlidren:<input type="number" name="children" required><br><br>
+  Smoker
+  <select name="smoker" required>
+    <option value="yes">yes</option>
+    <option value="no">no</option>
+</select><br><br>
+Region:
+<select name="region" required>
+    <option value="northeast">northeast</option>
+    <option value="southeast">southeast</option>
+    <option value="northwest">northwest</option>
+    <option value="southwest">southwest</option>
+</select><br><br>
+<input type="submit" value="predict">
+</form>
+{% if prediction_text  %}
+<h3>{{ prediction_text}}</h3>
+{% endif %}
+</body>
+</html>
